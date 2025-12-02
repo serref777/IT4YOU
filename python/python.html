@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kodu Game Lab • Онлайн обучение для детей</title>
+<title>Python Jr • Онлайн обучение для детей</title>
+<meta name="description" content="Обучение детей 6-14 лет основам Python. Создание игр, ботов и рисунков с помощью turtle.">
 <link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
 <body>
@@ -16,27 +17,27 @@
 
 <!-- HERO -->
 <div class="hero-frame hero" id="hero">
-  <h1 class="hero-line1">Учимся создавать игры с Kodu Game Lab</h1>
-  <h2 class="hero-line2">Визуальное программирование для детей 6–14 лет</h2>
-  <p>Развивайте логическое мышление и творческие навыки через создание собственных 3D-игр!</p>
+  <h1 class="hero-line1">Учимся программировать с Python Jr</h1>
+  <h2 class="hero-line2">Создание игр, ботов и рисунков с turtle для детей 6–14 лет</h2>
+  <p>Развивайте логическое мышление и креативность через простые и увлекательные проекты на Python!</p>
 </div>
 
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="img">
-    <img src="kodu.png" alt="Kodu Game Lab">
+    <img src="python.png" alt="Python">
   </div>
   <div class="descr">
     <div class="boxed">
-      <h3>Почему Kodu Game Lab</h3>
+      <h3>Почему Python Jr</h3>
       <ul class="services-list">
-        <li><strong>Простое визуальное программирование:</strong> правила "WHEN / DO"</li>
-        <li><strong>3D-миры:</strong> создание персонажей, объектов и уровней</li>
-        <li><strong>Для детей 6–14 лет:</strong> легко, понятно и увлекательно</li>
-        <li><strong>Проекты:</strong> дети создают свои игры и делятся ими</li>
-        <li><strong>Развитие логики и креатива:</strong> шаг за шагом к собственным играм</li>
+        <li><strong>Простое программирование:</strong> понятные уроки и визуальный результат</li>
+        <li><strong>Игры и проекты:</strong> дети создают простые игры и интерактивные программы</li>
+        <li><strong>Рисование с turtle:</strong> рисуем фигуры, узоры и простые анимации</li>
+        <li><strong>Боты:</strong> знакомство с автоматизацией и простыми чат-ботами</li>
+        <li><strong>Для детей 6–14 лет:</strong> безопасно, увлекательно и понятно</li>
       </ul>
-      <p><em>Ваш педагог Kodu Game Lab — опытный наставник</em></p>
+      <p><em>Ваш педагог Python Jr — опытный наставник</em></p>
     </div>
   </div>
 </section>
@@ -44,19 +45,20 @@
 <!-- CHILDREN SCHOOL -->
 <section class="children-school" id="children-school">
   <div class="boxed">
-    <h3>Программа обучения Kodu Game Lab для начинающих</h3>
+    <h3>Программа обучения Python Jr для начинающих</h3>
     <h4>Уроки:</h4>
     <ul>
-      <li><strong>Урок 1:</strong> Знакомство с Kodu, интерфейс и первый персонаж</li>
-      <li><strong>Урок 2:</strong> Простые правила "WHEN / DO", сбор предметов</li>
-      <li><strong>Урок 3:</strong> Управление персонажем и мини-игры</li>
-      <li><strong>Урок 4:</strong> Враги и препятствия, взаимодействие объектов</li>
-      <li><strong>Урок 5:</strong> Очки, цели и завершение уровня</li>
-      <li><strong>Урок 6:</strong> Создание ландшафта и визуальных миров</li>
-      <li><strong>Урок 7:</strong> Сложные правила и мини-квесты</li>
-      <li><strong>Урок 8:</strong> Тестирование и улучшение игр</li>
-      <li><strong>Урок 9:</strong> Демонстрация и публикация игр</li>
+      <li><strong>Урок 1:</strong> Знакомство с Python и установкой среды</li>
+      <li><strong>Урок 2:</strong> Переменные, числа и текст</li>
+      <li><strong>Урок 3:</strong> Условия и циклы</li>
+      <li><strong>Урок 4:</strong> Простые игры: угадай число</li>
+      <li><strong>Урок 5:</strong> Рисование с помощью turtle: линии и фигуры</li>
+      <li><strong>Урок 6:</strong> Создание мини-ботов и интерактивных программ</li>
+      <li><strong>Урок 7:</strong> Использование функций и логики для проектов</li>
+      <li><strong>Урок 8:</strong> Тестирование и исправление ошибок</li>
+      <li><strong>Урок 9:</strong> Демонстрация проектов и совместное обсуждение</li>
     </ul>
+
     <h4>Расписание и стоимость:</h4>
     <ul>
       <li>2 онлайн-урока в неделю, 60 минут каждый</li>
@@ -65,21 +67,21 @@
       <li>Стандартный курс: 8 занятий — 60 €</li>
       <li>Индивидуальные занятия: 12 € / урок</li>
     </ul>
-      <div id="footer"></div>
 
-  
-  
-<script>
-fetch('../footer.html')
-  .then(response => response.text())
-  .then(data => document.getElementById('footer').innerHTML = data);
-</script>
+    <!-- Динамический футер -->
+    <div id="footer"></div>
+    <script>
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data)
+        .catch(err => console.error('Не удалось загрузить футер:', err));
+    </script>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>© <span id="year"></span> Kodu Game Lab • Онлайн обучение для детей</p>
+  <p>© <span id="year"></span> Python Jr • Онлайн обучение для детей</p>
   <p>Контакты: 
     <a href="https://t.me/+-8ASz7zG8cAyN2Uy" target="_blank">Telegram</a>
     &nbsp;&nbsp;&nbsp;&nbsp;

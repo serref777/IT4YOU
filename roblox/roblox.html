@@ -4,20 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Roblox • Онлайн обучение для детей</title>
-<meta name="description" content="Обучение детей 6-14 лет созданию игр и проектов в Roblox. Визуальное программирование, создание персонажей и игровых миров.">
 <link rel="stylesheet" href="../style.css" type="text/css" media="all" />
 </head>
 <body>
+
+<!-- Canvas для эффекта Матрицы -->
+<canvas id="matrix-canvas"></canvas>
 
 <!-- GTranslate widget -->
 <div class="gtranslate_wrapper"></div>
 
 <!-- HERO -->
-<section class="hero" id="hero">
-  <h1>Учимся создавать игры с Roblox</h1>
-  <h2>Визуальное программирование и проектирование для детей 6–14 лет</h2>
+<div class="hero-frame hero" id="hero">
+  <h1 class="hero-line1">Учимся создавать игры с Roblox</h1>
+  <h2 class="hero-line2">Визуальное программирование и проектирование для детей 6–14 лет</h2>
   <p>Развивайте творческое мышление и навыки программирования через создание собственных игровых миров!</p>
-</section>
+</div>
 
 <!-- FEATURES -->
 <section class="features" id="features">
@@ -64,16 +66,30 @@
       <li>Индивидуальные занятия: 12 € / урок</li>
     </ul>
 
+    <!-- Динамический фиолетовый блок ссылок -->
+    <div id="footer"></div>
+    <script>
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data)
+        .catch(err => console.error('Не удалось загрузить футер:', err));
+    </script>
+
   </div>
 </section>
 
 <!-- Footer -->
-<div id="footer"></div>
+<footer>
+  <p>© <span id="year"></span> Roblox Studio • Онлайн обучение для детей</p>
+  <p>Контакты: 
+    <a href="https://t.me/+-8ASz7zG8cAyN2Uy" target="_blank">Telegram</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://chat.whatsapp.com/DvHSVU6dGJqBADuBSlZbs8" target="_blank">WhatsApp</a>
+  </p>
+</footer>
+
 <script>
-fetch('../footer.html')
-  .then(response => response.text())
-  .then(data => document.getElementById('footer').innerHTML = data)
-  .catch(err => console.error('Не удалось загрузить футер:', err));
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 <!-- GTranslate script -->
@@ -89,6 +105,36 @@ fetch('../footer.html')
   }
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+<!-- ====== MATRIX EFFECT ====== -->
+<script>
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d');
+function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+const letters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロゴゾドボポ0123456789!"№;%:?*()_+~';
+const lettersArr = letters.split('');
+const fontSize = 16;
+const columnGap = fontSize * 1.6;
+const rowGap = fontSize * 1.8;
+const columns = Math.floor(canvas.width / columnGap);
+const drops = [];
+for (let i = 0; i < columns; i++) drops[i] = 1;
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(0,0,0,0.02)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#0f0';
+    ctx.font = fontSize + 'px monospace';
+    for (let i = 0; i < drops.length; i++) {
+        const text = lettersArr[Math.floor(Math.random() * lettersArr.length)];
+        ctx.fillText(text, i * columnGap, drops[i] * rowGap);
+        if (drops[i] * rowGap > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i] += 0.25;
+    }
+}
+setInterval(drawMatrix, 33);
+</script>
 
 </body>
 </html>

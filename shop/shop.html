@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Интернет-магазин OpenCart • Установка и настройка</title>
+<meta name="description" content="Обучение детей и начинающих созданию интернет-магазина на OpenCart. Установка, настройка, товары, шаблоны, оплата и безопасность.">
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+
+<!-- Canvas Matrix -->
+<canvas id="matrix-canvas"></canvas>
+
+<!-- GTranslate widget -->
+<div class="gtranslate_wrapper"></div>
+
+<!-- HERO -->
+<div class="hero-frame hero" id="hero">
+  <h1 class="hero-line1">Создаём интернет-магазин на OpenCart</h1>
+  <h2 class="hero-line2">Установка, настройка, шаблоны и управление товарами</h2>
+  <p>Пошаговое обучение созданию готового магазина без программирования — быстро, понятно и практично!</p>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="img">
+    <img src="shop.png" alt="OpenCart Installation">
+  </div>
+  <div class="descr">
+    <div class="boxed">
+      <h3>Почему OpenCart</h3>
+      <ul class="services-list">
+        <li><strong>Лёгкая установка:</strong> магазин работает через 5 минут</li>
+        <li><strong>Настройка внешнего вида:</strong> шаблоны, темы, модули</li>
+        <li><strong>Управление товарами:</strong> категории, цены, наличие</li>
+        <li><strong>Оплата и доставка:</strong> подключение методов оплаты</li>
+        <li><strong>Простая админ-панель:</strong> всё наглядно и доступно</li>
+      </ul>
+      <p><em>Ваш педагог по OpenCart — опытный наставник</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE PROGRAM -->
+<section class="children-school" id="children-school">
+  <div class="boxed">
+    <h3>Программа обучения OpenCart: Установка и настройка</h3>
+
+    <h4>Уроки:</h4>
+    <ul>
+      <li><strong>Урок 1:</strong> Что такое OpenCart, выбор хостинга и установка</li>
+      <li><strong>Урок 2:</strong> Первые шаги: панель администратора и структура магазина</li>
+      <li><strong>Урок 3:</strong> Добавление товаров и категорий</li>
+      <li><strong>Урок 4:</strong> Настройка шаблонов, логотипа и дизайна</li>
+      <li><strong>Урок 5:</strong> Модули и расширения — установка и настройка</li>
+      <li><strong>Урок 6:</strong> Настройка оплаты и доставки</li>
+      <li><strong>Урок 7:</strong> SEO и оптимизация магазина</li>
+      <li><strong>Урок 8:</strong> Безопасность, резервные копии и обновления</li>
+      <li><strong>Урок 9:</strong> Подготовка и публикация собственного интернет-магазина</li>
+    </ul>
+
+    <h4>Расписание и стоимость:</h4>
+    <ul>
+      <li>2 онлайн-урока в неделю, по 60 минут</li>
+      <li>Пробное занятие: бесплатно</li>
+      <li>Базовый курс: 4 занятия — 35 €</li>
+      <li>Стандартный курс: 8 занятий — 60 €</li>
+      <li>Индивидуальные занятия: 12 € / урок</li>
+    </ul>
+
+    <!-- Dynamic footer -->
+    <div id="footer"></div>
+    <script>
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data)
+        .catch(err => console.error('Не удалось загрузить футер:', err));
+    </script>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© <span id="year"></span> OpenCart • Установка и настройка</p>
+  <p>Контакты: 
+    <a href="https://t.me/+-8ASz7zG8cAyN2Uy" target="_blank">Telegram</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://chat.whatsapp.com/DvHSVU6dGJqBADuBSlZbs8" target="_blank">WhatsApp</a>
+  </p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- GTranslate script -->
+<script>
+  window.gtranslateSettings = {
+    "default_language":"ru",
+    "native_language_names":true,
+    "detect_browser_language":true,
+    "wrapper_selector":".gtranslate_wrapper",
+    "switcher_horizontal_position":"right",
+    "switcher_vertical_position":"top",
+    "flag_style":"3d"
+  }
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+<!-- MATRIX EFFECT -->
+<script>
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d');
+function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+const letters='アカサタナ0123456789абвгдеж%!#?+*';
+const arr=letters.split('');
+const fontSize=16;
+const colGap=fontSize*1.6;
+const rowGap=fontSize*1.8;
+const columns=Math.floor(canvas.width/colGap);
+const drops=[];
+for(let i=0;i<columns;i++) drops[i]=1;
+function drawMatrix(){
+  ctx.fillStyle='rgba(0,0,0,0.03)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='#0f0';
+  ctx.font=fontSize+'px monospace';
+  for(let i=0;i<drops.length;i++){
+    const char=arr[Math.floor(Math.random()*arr.length)];
+    ctx.fillText(char,i*colGap,drops[i]*rowGap);
+    if(drops[i]*rowGap>canvas.height&&Math.random()>0.975) drops[i]=0;
+    drops[i]+=0.25;
+  }
+}
+setInterval(drawMatrix,33);
+</script>
+
+</body>
+</html>

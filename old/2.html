@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Matrix Effect</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        background: black;
+    }
+    canvas {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロゴゾドボポ0123456789!"№;%:?*()_+~';
+    const lettersArr = letters.split('');
+
+    const fontSize = 16;
+
+    // === РЕДКИЕ СТОЛБЦЫ ===
+    const columnGap = fontSize * 1.6;  
+    const columns = Math.floor(canvas.width / columnGap);
+
+    // === ВЕРТИКАЛЬНЫЙ GAP (отступ вниз) — ДОПИСАНО ===
+    const rowGap = fontSize * 1.8;   // ← СДЕЛАНО РЕЖЕ ВНИЗ !!!
+
+    // === ПОЗИЦИЯ ПАДЕНИЯ ===
+    const drops = [];
+    for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+    }
+
+    function draw() {
+
+        // === ДЛИННЫЕ ХВОСТЫ ===
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.011)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#0f0';
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = lettersArr[Math.floor(Math.random() * lettersArr.length)];
+
+            // === ВСТАВЛЕНО: rowGap вместо fontSize ===
+            ctx.fillText(text, i * columnGap, drops[i] * rowGap);  
+            // ← теперь символы НЕ кучно вниз
+
+            // === СБРОС ===
+            if (drops[i] * rowGap > canvas.height && Math.random() > 0.95) {
+                drops[i] = 0;
+            }
+
+            // === СКОРОСТЬ ===
+            drops[i] += 0.15;
+        }
+    }
+
+    // === FPS ===
+    setInterval(draw, 50);
+
+    window.onresize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    };
+</script>
+
+</body>
+</html>

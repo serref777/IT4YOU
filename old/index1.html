@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>3D Моделирование • Программирование • Создание сайтов • Онлайн обучение для детей</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+
+<!-- Canvas для эффекта Матрицы -->
+<canvas id="matrix-canvas"></canvas>
+
+<!-- GTranslate widget -->
+<div class="gtranslate_wrapper"></div>
+
+<!-- HERO -->
+<div id="header"></div>
+<script>
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => document.getElementById('header').innerHTML = data);
+</script>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="img">
+    <img src="1.png.png" alt="3D моделирование">
+  </div>
+  <div class="descr">
+    <div class="boxed">
+      <h3>Почему выбирают нас</h3>
+      <ul class="services-list">
+        <li><strong>3D-моделирование:</strong> яркие персонажи, архитектура и продукты</li>
+        <li><strong>Программирование:</strong> современные веб-сайты, умные сервисы и автоматизация</li>
+        <li><strong>Онлайн-обучение для детей:</strong> увлекательно и безопасно</li>
+        <li><strong>Создание сайтов:</strong> лендинги, магазины, CRM и интеграции</li>
+        <li><strong>Поддержка:</strong> мы рядом, помогаем всегда</li>
+      </ul>
+      <p><em>Арон Ткаченко — Руководитель отдела разработки</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="how-we-work">
+  <div class="boxed">
+    <h3>Как мы работаем</h3>
+    <p><strong>Вкратце:</strong> анализируем, планируем, разрабатываем, тестируем и предоставляем результаты.</p>
+    <ol class="services-list">
+      <li><strong>Бесплатная консультация</strong></li>
+      <li><strong>Условия и бюджет</strong></li>
+      <li><strong>Разработка / Онлайн-обучение</strong></li>
+      <li><strong>Завершенный проект + поддержка</strong></li>
+    </ol>
+    <p class="center-text">
+      <a class="btn-highlight" href="https://t.me/+-8ASz7zG8cAyN2Uy" target="_blank">Готовы начать? Свяжитесь с нами в Telegram</a>
+    </p>
+  </div>
+</section>
+
+<!-- DIRECTIONS -->
+<section class="directions" id="directions">
+  <div class="boxed">
+    <h3>Наши направления</h3>
+    <div class="direction-grid">
+      <div class="direction-box">
+        <h4>3D Моделирование</h4>
+        <ul>
+          <li>Игровые модели</li>
+          <li>Архитектура</li>
+          <li>3D для маркетплейсов</li>
+        </ul>
+      </div>
+      <div class="direction-box">
+        <h4>Программирование</h4>
+        <ul>
+          <li>Боты и сервисы</li>
+          <li>API и автоматизация</li>
+          <li>Приложения</li>
+        </ul>
+      </div>
+      <div class="direction-box">
+        <h4>Создание сайтов</h4>
+        <ul>
+          <li>Лендинги</li>
+          <li>Корпоративные сайты</li>
+          <li>E-commerce</li>
+        </ul>
+      </div>
+      <div class="direction-box">
+        <h4>Онлайн обучение для детей от 6 лет</h4>
+        <ul>
+          <li>3D моделирование в игровой форме</li>
+          <li>Scratch и Python Junior</li>
+          <li>Создание мини-сайтов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHILDREN SCHOOL -->
+<section class="children-school" id="children-school">
+  <div class="boxed">
+    <h3>Школа цифровых навыков для детей (от 6 лет) — только онлайн</h3>
+    <h4>Программа обучения:</h4>
+    <ul>
+      <li><strong>3D Моделирование:</strong> создание персонажей, объектов, простых сцен</li>
+      <li><strong>Программирование:</strong> Scratch, базовый Python, алгоритмическая логика</li>
+      <li><strong>Мини-сайты:</strong> работа с конструкторами и основы HTML</li>
+      <li><strong>Проекты:</strong> ребёнок создаёт свои готовые работы</li>
+    </ul>
+    <h4>Расписание:</h4>
+    <ul>
+      <li>2 онлайн-урока в неделю, 60 минут каждый</li>
+      <li>Индивидуальные и групповые занятия</li>
+    </ul>
+    <h4>Стоимость:</h4>
+    <ul>
+      <li><strong>Пробное занятие:</strong> бесплатно</li>
+      <li><strong>Базовый:</strong> 4 занятия — 35 €</li>
+      <li><strong>Стандарт:</strong> 8 занятий — 60 €</li>
+      <li><strong>Индивидуальный:</strong> 12 € / занятие</li>
+    </ul>
+  
+  
+  
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© <span id="year"></span> Kodu Game Lab • Онлайн обучение для детей</p>
+  <p>Контакты: 
+    <a href="https://t.me/+-8ASz7zG8cAyN2Uy" target="_blank">Telegram</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://chat.whatsapp.com/DvHSVU6dGJqBADuBSlZbs8" target="_blank">WhatsApp</a>
+  </p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- ====== MATRIX EFFECT ====== -->
+<script>
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const letters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロゴゾドボポ0123456789!"№;%:?*()_+~';
+const lettersArr = letters.split('');
+
+const fontSize = 16;
+const columnGap = fontSize * 1.6;
+const rowGap = fontSize * 1.8;
+
+const columns = Math.floor(canvas.width / columnGap);
+const drops = [];
+for (let i = 0; i < columns; i++) drops[i] = 1;
+
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(0,0,0,0.02)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#0f0';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = lettersArr[Math.floor(Math.random() * lettersArr.length)];
+        ctx.fillText(text, i * columnGap, drops[i] * rowGap);
+
+        if (drops[i] * rowGap > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i] += 0.25;
+    }
+}
+
+setInterval(drawMatrix, 33);
+</script>
+
+</body>
+</html>
